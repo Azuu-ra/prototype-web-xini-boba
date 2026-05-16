@@ -1,0 +1,58 @@
+/* User theme (coklat) - reusable styles */
+
+:root{
+  /* Theme user: coklat (samakan dengan assets/style.css) */
+  --boba-bg: #d39f72;
+  --boba-primary: #201414ee;
+  --boba-secondary: #f8f5f2;
+
+  --boba-accent-1: #6f4e37;
+  --boba-accent-2: #5a3d2b;
+  --boba-footer-bg: #2a1f18;
+  --boba-card-radius: 20px;
+}
+
+body{
+  background: var(--boba-bg);
+  color: var(--boba-primary);
+}
+
+/* Shared “header panel” gradient */
+.user-theme-gradient{
+  background: linear-gradient(135deg, var(--boba-accent-1), var(--boba-accent-2));
+  color: #fff;
+}
+
+/* Shared card */
+.card-modern{
+  border: 0;
+  border-radius: var(--boba-card-radius);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+/* Buttons */
+.btn-boba,
+.btn-boba:visited{
+  background: var(--boba-accent-1);
+  color: #fff;
+  border: 0;
+  border-radius: 14px;
+  transition: transform .15s ease, background-color .15s ease;
+}
+
+.btn-boba:hover{
+  background: var(--boba-accent-2);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Footer */
+.footer-bar{
+  background: var(--boba-footer-bg);
+  color: #e8dfd6;
+}
+
+.footer-bar a{
+  color: #e8dfd6;
+}
+

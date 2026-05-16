@@ -1,0 +1,46 @@
+body{
+    background:#d39f72;
+}
+
+/* Supaya footer selalu di bawah (tidak ketutup/ganjal saat konten pendek) */
+html, body{ height:100%; }
+body{ min-height:100%; }
+
+/* Karena halaman tidak selalu memakai wrapper .wrapper,
+   pakai pendekatan universal agar footer terdorong ke bawah */
+body{ display:flex; flex-direction:column; }
+
+/* Supaya footer terdorong ke bawah walau tidak ada wrapper */
+footer.footer-bar{ margin-top:auto; }
+footer.footer-bar .footer-wrap{ border-top-left-radius:18px; border-top-right-radius:18px; overflow:hidden; }
+
+
+/* wrapper (kalau suatu saat dipakai) */
+.wrapper{ min-height:100vh; display:flex; flex-direction:column; }
+.wrapper > main{ flex:1; }
+
+
+
+.card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn-boba{
+    background:#6f4e37;
+    color:white;
+}
+
+.btn-boba:hover{
+    background:#5a3d2b;
+    color:white;
+}
+
+
+/* Global untuk navbar kiri (demo animasi) */
+#nav-toggle{ position: fixed; top: var(--nav-top); left: 0; z-index: 1030; cursor: pointer; }
+/* biar konten nggak ketutup sedikit (walau slide in/out) */
+body{ padding-left: 0; }
+
