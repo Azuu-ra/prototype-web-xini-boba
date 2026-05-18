@@ -214,8 +214,6 @@ $dataMenu = mysqli_query($conn,"SELECT * FROM menu");
 
 <?php include 'assets/footer.php'; ?>
 
-<?php include 'assets/footer.php'; ?>
-
 <script>
 
 document.querySelectorAll('.menu-card').forEach(card => {
