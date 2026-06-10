@@ -9,8 +9,9 @@
 
 | ID Test   | Kategori | Langkah pengujian | ExpecTed Result | Actual Reslt | Status |
 | --------- | -------- | ----------------- | --------------- | ------------ | ------ |
-| Modul     | Login    |
-| Prioritas | Tinggi   |
+| Modul     | Login    |||
+| TES N-01 | NEGATIF | MASUKAN HALAMAN USER DAN PASSWORD YANG KOSONG | USER : - PW : - | LOGIN GAGAL, PESAN ERROR MUNCUL | LOGIN GAGAL MENAMPILKAN PESAN HARUS DIISI TIDAK BOLEH KOSONG | FAIL |
+
 
 ### Langkah:
 
