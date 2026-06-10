@@ -7,8 +7,8 @@
 
 ## 1.Login Valid
 
-| ID Test   | Kategori | Langkah pengujian | ExpecTed Result | Actual Reslt | Status |
-| --------- | -------- | ----------------- | --------------- | ------------ | ------ |
+| ID Test   | Kategori | Langkah pengujian | Data masukan | ExpecTed Result | Actual Reslt | Status |
+| --------- | -------- | ----------------- | ------------ | --------------- | ------------ | ------ |
 | Modul     | Login    |
 | Prioritas | Tinggi   |
 
