@@ -1,0 +1,231 @@
+/* User theme (coklat) - reusable styles */
+
+:root{
+  /* Theme user: coklat (samakan dengan assets/style.css) */
+  --boba-bg: #d39f72;
+  --boba-primary: #201414ee;
+  --boba-secondary: #f8f5f2;
+
+  --boba-accent-1: #6f4e37;
+  --boba-accent-2: #5a3d2b;
+  --boba-footer-bg: #2a1f18;
+  --boba-card-radius: 20px;
+}
+
+body{
+  background: var(--boba-bg);
+  color: var(--boba-primary);
+}
+
+/* Shared “header panel” gradient */
+.user-theme-gradient{
+  background: linear-gradient(135deg, var(--boba-accent-1), var(--boba-accent-2));
+  color: #fff;
+}
+
+/* Shared card */
+.card-modern{
+  border: 0;
+  border-radius: var(--boba-card-radius);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  background:#f4efe9;
+}
+
+.table-responsive{
+    background:#f6f1eb;
+    border-radius:18px;
+    padding:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+
+/* Buttons */
+.btn-boba,
+.btn-boba:visited{
+  background: var(--boba-accent-1);
+  color: #fff;
+  border: 0;
+  border-radius: 14px;
+  transition: transform .15s ease, background-color .15s ease;
+}
+
+.btn-boba:hover{
+  background: var(--boba-accent-2);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Footer */
+.footer-bar{
+  background: var(--boba-footer-bg);
+  color: #e8dfd6;
+}
+
+.footer-bar a{
+  color: #e8dfd6;
+}
+
+.voucher-icon{
+    color:#6f4e37;
+}
+
+
+.checkin-shortcut,
+.checkin-shortcut:link,
+.checkin-shortcut:visited{
+    width:75px;
+    height:75px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(255,255,255,0.12);
+    border:2px solid rgba(255,255,255,0.2);
+    border-radius:20px;
+
+    color:#ffffff !important;
+    text-decoration:none !important;
+}
+
+.checkin-shortcut:hover{
+    color:#ffffff !important;
+    background:rgba(255,255,255,0.2);
+    transform:translateY(-4px);
+}
+
+.checkin-shortcut i{
+    color:#ffffff !important;
+    font-size:35px;
+    margin-bottom:5px;
+}
+
+.checkin-shortcut span{
+    color:#ffffff !important;
+    font-size:11px;
+    font-weight:700;
+}
+
+.avatar-circle {
+    width:96px;
+    height:96px;
+    border-radius:999px;
+    object-fit:cover;
+    border:4px solid rgba(255,255,255,0.25);
+    box-shadow:0 10px 24px rgba(0,0,0,0.08);
+} 
+
+.profile-card {
+    border:0;
+    border-radius:20px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.08);
+    overflow:hidden;
+}
+
+.profile-header {
+    color:#fff;
+}
+
+.form-control {
+    border-radius:14px;
+}
+
+.cart-thumb {
+    width:64px;
+    height:64px;
+    object-fit:cover;
+    border-radius:16px;
+    border:1px solid rgba(0,0,0,0.06);
+}
+
+.user-point-badge{
+    background:#fff;
+    color:#6f4e37;
+    font-weight:700;
+    padding:10px 16px;
+    border-radius:12px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+}
+
+
+/* ===== Modal Xini Boba ===== */
+
+.modal-content{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.modal-header{
+    background:linear-gradient(
+        135deg,
+        #6f4e37,
+        #8b5e3c
+    );
+
+    color:white;
+    border-bottom:none;
+    padding:20px 25px;
+}
+
+.modal-title{
+    font-weight:700;
+}
+
+.modal-body{
+    padding:25px;
+}
+
+.modal-footer{
+    border-top:none;
+    padding:20px 25px;
+}
+
+.modal-body p{
+    font-size:1rem;
+    margin-bottom:15px;
+}
+
+.modal-body strong{
+    color:#6f4e37;
+}
+
+.btn-modal-cancel{
+    background:#e9ecef;
+    border:none;
+    border-radius:12px;
+    padding:10px 18px;
+}
+
+.btn-modal-cancel:hover{
+    background:#dfe3e6;
+}
+
+.btn-modal-confirm{
+    background:#6f4e37;
+    color:white;
+    border:none;
+    border-radius:12px;
+    padding:10px 18px;
+    transition:.3s;
+}
+
+.btn-modal-confirm:hover{
+    background:#5a3f2d;
+    color:white;
+}
+
+.alert-voucher{
+    background:#fff4e5;
+    color:#6f4e37;
+    border:none;
+    border-radius:12px;
+    padding:12px;
+    font-weight:600;
+}
+
+
