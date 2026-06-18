@@ -163,6 +163,9 @@ $avatarId = ((int)($user_id % 2)); // 0 atau 1
                                 </div>
                                 <button class="btn btn-boba w-100 py-2 fw-semibold" type="submit" name="update_password">Simpan Password</button>
                             </form>
+                            <div class="mt-3 text-end">
+                                <a href="password_reset.php?from=profile" class="small text-decoration-none">Reset password via email</a>
+                            </div>
                         </div>
                     </div>
                 </div>

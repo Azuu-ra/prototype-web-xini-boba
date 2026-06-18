@@ -106,11 +106,11 @@ $dataMenu = mysqli_query($conn,"SELECT * FROM menu");
 
         <div class="collapse navbar-collapse" id="navbarMenu">
             <div class="ms-auto d-flex align-items-center gap-3">
+                <?php if (isset($_SESSION['id'])): ?>
                 <div class="navbar-user-pill text-white rounded-pill px-3 py-2">
                     <div class="small opacity-75">Poin Anda</div>
                     <div class="fw-bold">
                         <?php
-                        // poin disimpan di tabel users, bisa jadi tidak selalu ada di session
                         $poin = 0;
                         if (isset($_SESSION['poin'])) {
                             $poin = (int)$_SESSION['poin'];
@@ -132,6 +132,14 @@ $dataMenu = mysqli_query($conn,"SELECT * FROM menu");
                 <a href="logout.php" class="btn btn-light btn-sm fw-semibold rounded-pill px-3 py-2">
                     Logout
                 </a>
+                <?php else: ?>
+                <a href="login.php" class="btn btn-outline-light btn-sm fw-semibold rounded-pill px-3 py-2">
+                    Login
+                </a>
+                <a href="register.php" class="btn btn-light btn-sm fw-semibold rounded-pill px-3 py-2">
+                    Daftar
+                </a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -167,6 +175,7 @@ $dataMenu = mysqli_query($conn,"SELECT * FROM menu");
                     <h4 class="mb-1 fw-bold"><?= $menu['nama_menu']; ?></h4>
                     <div class="price text-dark mb-3">Rp <?= number_format($menu['harga']); ?></div>
 
+                    <?php if (isset($_SESSION['id'])): ?>
                     <form action="tambah_ke_keranjang.php" method="POST" class="mt-auto">
                         <input type="hidden" name="menu_id" value="<?= $menu['id']; ?>">
 
@@ -202,6 +211,12 @@ $dataMenu = mysqli_query($conn,"SELECT * FROM menu");
                             Tambah ke Keranjang
                         </button>
                     </form>
+                    <?php else: ?>
+                        <div class="d-flex align-items-center gap-2 mt-2">
+                            <input type="number" class="form-control text-center rounded-3" value="1" disabled style="max-width:80px;">
+                        </div>
+                        <a href="login.php" class="btn btn-boba w-100 mt-3 py-2 fw-semibold">Login untuk Pesan</a>
+                    <?php endif; ?>
 
                 </div>
             </div>

@@ -2,12 +2,24 @@
 session_start();
 include 'config/koneksi.php';
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = trim($_POST['username'] ?? '');
+$password = $_POST['password'] ?? '';
+
+if ($username === '' || $password === '') {
+    echo "<script>alert('Username dan password harus diisi.');window.location='login.php';</script>";
+    exit();
+}
+
+$usernameEsc = mysqli_real_escape_string($conn, $username);
 
 // cek username
 $query = mysqli_query($conn,
-"SELECT * FROM users WHERE username='$username'");
+    "SELECT * FROM users WHERE username='$usernameEsc'");
+
+if (!$query) {
+    echo "<script>alert('Terjadi kesalahan. Silakan coba lagi.');window.location='login.php';</script>";
+    exit();
+}
 
 $data = mysqli_fetch_assoc($query);
 

@@ -42,6 +42,10 @@
                             <input type="password" name="password" class="form-control" required>
                         </div>
 
+                        <div class="mb-3 text-end">
+                            <a href="password_reset.php" class="small text-decoration-none">Lupa kata sandi?</a>
+                        </div>
+
                         <button class="btn btn-boba w-100 py-2 fw-semibold" type="submit">
                             Login
                         </button>

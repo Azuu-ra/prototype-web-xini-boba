@@ -15,7 +15,12 @@ $pesan = '';
 
 if(isset($_POST['tukar_voucher'])){
 
-    $user_id = $_SESSION['id'] ?? 0;
+    if(!isset($_SESSION['id'])){
+        header('Location: login.php');
+        exit();
+    }
+
+    $user_id = (int)$_SESSION['id'];
     $voucher_id = (int)$_POST['voucher_id'];
 
     $user = mysqli_fetch_assoc(
@@ -123,18 +128,25 @@ AND tanggal_berakhir"
             </div>
 
             <div class="mt-2">
-                <span class="user-point-badge">
-                    <i class="fa fa-star text-warning"></i>
-                    My Poin :
-                    <?= (int)$userLogin['poin']; ?>
-                </span>
+                <?php if ($isLogged): ?>
+                    <span class="user-point-badge">
+                        <i class="fa fa-star text-warning"></i>
+                        My Poin :
+                        <?= (int)$userLogin['poin']; ?>
+                    </span>
+                <?php else: ?>
+                    <a href="login.php" class="btn btn-boba btn-sm rounded-pill">
+                        <i class="fa fa-sign-in"></i>
+                        Login untuk lihat poin
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
-            
-            <a href="checkin.php" class="checkin-shortcut text-decoration-none">
-                <i class="fa fa-calendar-check-o"></i>
-                <span>Check In</span>
-            </a>
+        
+        <a href="checkin.php" class="checkin-shortcut text-decoration-none">
+            <i class="fa fa-calendar-check-o"></i>
+            <span>Check In</span>
+        </a>
         </div>
     </div>
 
@@ -179,21 +191,25 @@ AND tanggal_berakhir"
 
                             <div class="mt-auto">
 
-                            <?php if($stokVoucher > 0): ?>
-
-                                <button
-                                type="button"
-                                class="btn btn-boba w-100"
-                                data-bs-toggle="modal"
-                                data-bs-target="#tukarModal"
-                                data-id="<?= $voucher['id']; ?>"
-                                data-nama="<?= htmlspecialchars($voucher['nama_voucher']); ?>"
-                                data-poin="<?= $voucher['poin_dibutuhkan']; ?>">
-
-                                <i class="fa fa-exchange"></i>
-                                Tukar Voucher
-
-                            </button>
+                            <?php if ($stokVoucher > 0): ?>
+                                <?php if ($isLogged): ?>
+                                    <button
+                                        type="button"
+                                        class="btn btn-boba w-100"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#tukarModal"
+                                        data-id="<?= $voucher['id']; ?>"
+                                        data-nama="<?= htmlspecialchars($voucher['nama_voucher']); ?>"
+                                        data-poin="<?= $voucher['poin_dibutuhkan']; ?>">
+                                        <i class="fa fa-exchange"></i>
+                                        Tukar Voucher
+                                    </button>
+                                <?php else: ?>
+                                    <a href="login.php" class="btn btn-boba w-100">
+                                        <i class="fa fa-sign-in"></i>
+                                        Login untuk Tukar
+                                    </a>
+                                <?php endif; ?>
 
                             <?php else: ?>
 

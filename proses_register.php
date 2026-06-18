@@ -2,13 +2,18 @@
 
 include 'config/koneksi.php';
 
-$nama       = $_POST['nama'];
-$username   = $_POST['username'];
-$email      = $_POST['email'];
-$password   = $_POST['password'];
-$konfirmasi = $_POST['konfirmasi_password'];
+$nama       = trim($_POST['nama'] ?? '');
+$username   = trim($_POST['username'] ?? '');
+$email      = trim($_POST['email'] ?? '');
+$password   = $_POST['password'] ?? '';
+$konfirmasi = $_POST['konfirmasi_password'] ?? '';
 
-if($password != $konfirmasi){
+if ($nama === '' || $username === '' || $email === '' || $password === '' || $konfirmasi === '') {
+    echo "<script>alert('Semua field harus diisi.');window.location='register.php';</script>";
+    exit;
+}
+
+if ($password !== $konfirmasi){
 
     echo "
     <script>
@@ -22,8 +27,12 @@ if($password != $konfirmasi){
 
 $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
+$namaEsc = mysqli_real_escape_string($conn, $nama);
+$usernameEsc = mysqli_real_escape_string($conn, $username);
+$emailEsc = mysqli_real_escape_string($conn, $email);
+
 // pakai $conn
-$cek = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'");
+$cek = mysqli_query($conn, "SELECT * FROM users WHERE username='$usernameEsc'");
 
 if(mysqli_num_rows($cek) > 0){
 
@@ -47,9 +56,9 @@ $query = mysqli_query($conn, "INSERT INTO users
 
 VALUES
 (
-    '$nama',
-    '$username',
-    '$email',
+    '$namaEsc',
+    '$usernameEsc',
+    '$emailEsc',
     '$password_hash'
 )
 ");

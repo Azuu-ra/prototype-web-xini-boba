@@ -4,6 +4,11 @@ include 'config/koneksi.php';
 
 $order_id = $_SESSION['last_order_id'];
 
+if (!isset($_SESSION['id'])) {
+    header('Location: login.php');
+    exit();
+}
+
     $getOrder =
     mysqli_query(
     $conn,

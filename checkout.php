@@ -1,8 +1,12 @@
 <?php
 session_start();
 include 'config/koneksi.php';
-
 $user_id = $_SESSION['id'];
+
+if (!isset($_SESSION['id'])) {
+    header('Location: login.php');
+    exit();
+}
 $menu_id = $_POST['menu_id'];
 $jumlah = $_POST['jumlah'];
 

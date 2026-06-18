@@ -153,47 +153,6 @@ body{
 
 /* ===== Modal Xini Boba ===== */
 
-.modal-content{
-    border:none;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
-}
-
-.modal-header{
-    background:linear-gradient(
-        135deg,
-        #6f4e37,
-        #8b5e3c
-    );
-
-    color:white;
-    border-bottom:none;
-    padding:20px 25px;
-}
-
-.modal-title{
-    font-weight:700;
-}
-
-.modal-body{
-    padding:25px;
-}
-
-.modal-footer{
-    border-top:none;
-    padding:20px 25px;
-}
-
-.modal-body p{
-    font-size:1rem;
-    margin-bottom:15px;
-}
-
-.modal-body strong{
-    color:#6f4e37;
-}
-
 .btn-modal-cancel{
     background:#e9ecef;
     border:none;
