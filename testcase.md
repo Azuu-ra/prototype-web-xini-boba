@@ -110,6 +110,11 @@
 
 | ID Test | Kategori | Langkah pengujian | Data masukan | ExpecTed Result | Actual Reslt | Status | Bukti |
 | ------- | -------- | ----------------- | ------------ | --------------- | ------------ | ------ | ----- |
+| adm-ver-01 | Positive | Admin membuka halaman verifikasi pembayaran | Klik menu verifikasi pembayaran | Sistem menampilkan daftar pembayaran user | Sistem berhasil menampilkan daftar pembayaran | PASS |
+| adm-ver-02 | Positive | Admin memverifikasi pembayaran valid | Bukti pembayaran valid | Status pesanan berubah menjadi diproses | Status pesanan berhasil berubah menjadi diproses | PASS |
+| adm-ver-03 | Negatif | Admin memverifikasi tanpa memilih pesanan | Tidak memilih pesanan | Sistem menolak proses dan menampilkan pesan error | Sistem menampilkan pesan pilih pesanan terlebih dahulu | PASS |
+| adm-ver-04 | Negatif | Admin menolak bukti pembayaran tidak valid | Bukti pembayaran palsu/tidak jelas | Status pembayaran ditolak | Sistem berhasil mengubah status menjadi ditolak | PASS |
+| adm-ver-05 | Edge | Admin memverifikasi pembayaran yang sudah diverifikasi | Pesanan sudah diverifikasi | Sistem menolak verifikasi ulang | Sistem menampilkan pesan pesanan sudah diverifikasi | PASS |
 
 ---
 
@@ -129,7 +134,11 @@
 
 | ID Test | Kategori | Langkah pengujian | Data masukan | ExpecTed Result | Actual Reslt | Status | Bukti |
 | ------- | -------- | ----------------- | ------------ | --------------- | ------------ | ------ | ----- |
-
+| adm-voc-01 | Positive | Admin menambahkan voucher baru | Voucher Diskon 20% | Voucher berhasil ditambahkan | Voucher berhasil tersimpan | PASS |
+| adm-voc-02 | Positive | Admin mengedit voucher | Mengubah nilai diskon | Data voucher berhasil diperbarui | Voucher berhasil diperbarui | PASS |
+| adm-voc-03 | Negatif | Admin menambahkan voucher tanpa data lengkap | Nama voucher kosong | Sistem menolak penyimpanan | Sistem menampilkan pesan wajib diisi | PASS |
+| adm-voc-04 | Negatif | Admin memasukkan poin voucher tidak valid | Poin : -10 | Sistem menolak input | Sistem menampilkan pesan poin tidak valid | PASS |
+| adm-voc-05 | Edge | Admin menghapus voucher yang sedang digunakan user | Voucher aktif | Sistem meminta konfirmasi penghapusan | Sistem menampilkan konfirmasi sebelum menghapus | PASS |
 ---
 
 ## 6. My Order
@@ -150,6 +159,11 @@
 
 | ID Test | Kategori | Langkah pengujian | Data masukan | ExpecTed Result | Actual Reslt | Status | Bukti |
 | ------- | -------- | ----------------- | ------------ | --------------- | ------------ | ------ | ----- |
+| adm-ord-01 | Positive | Admin membuka daftar pesanan | Klik menu pesanan | Sistem menampilkan seluruh data pesanan | Sistem berhasil menampilkan data pesanan | PASS |
+| adm-ord-02 | Positive | Admin melihat detail pesanan user | Klik detail pesanan | Sistem menampilkan detail transaksi | Detail transaksi berhasil ditampilkan | PASS |
+| adm-ord-03 | Positive | Admin mengubah status pesanan | Status : Diproses | Status pesanan berhasil diperbarui | Status berhasil berubah | PASS |
+| adm-ord-04 | Negatif | Admin mengubah status tanpa memilih pesanan | Tidak memilih pesanan | Sistem menolak perubahan status | Sistem menampilkan pesan pilih pesanan terlebih dahulu | PASS | 
+| adm-ord-05 | Edge | Admin mengubah status pesanan yang sudah selesai | Status selesai | Sistem menolak perubahan ulang | Sistem menampilkan pesan pesanan sudah selesai | PASS | 
 
 ---
 
